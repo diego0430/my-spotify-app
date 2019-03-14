@@ -7,8 +7,8 @@ const mapStateToProps = (state) => {
     return {spotifyApi: currentState.items}  // 描画するのに必要なのはとりあえずitemsだけなのでitemsだけ返す
 }
 
-const GetPostList = connect(
+const GetAlbumList = connect(
     mapStateToProps
 )(AlbumList)
 
-export default GetPostList
+export default GetAlbumList

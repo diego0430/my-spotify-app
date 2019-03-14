@@ -1,5 +1,5 @@
 import {
-    GET_POSTS_REQUEST, GET_POSTS_SUCCESS, GET_POSTS_FAILURE
+    GET_ALBUMS_REQUEST, GET_ALBUMS_SUCCESS, GET_ALBUMS_FAILURE
 } from '../actions/albumAction'
 
 const initalState = {
@@ -9,7 +9,7 @@ const initalState = {
 
 const albums = (state = [initalState], action) => {
     switch (action.type) {
-        case GET_POSTS_REQUEST:
+        case GET_ALBUMS_REQUEST:
             return [
                 ...state,
                 {
@@ -17,7 +17,7 @@ const albums = (state = [initalState], action) => {
                     items: {}
                 }
             ]
-        case GET_POSTS_SUCCESS:
+        case GET_ALBUMS_SUCCESS:
             return [
                 ...state,
                 {
@@ -26,7 +26,7 @@ const albums = (state = [initalState], action) => {
                     lastUpdated: action.receivedAt
                 }
             ]
-        case GET_POSTS_FAILURE:
+        case GET_ALBUMS_FAILURE:
             return [
                 ...state,
                 {

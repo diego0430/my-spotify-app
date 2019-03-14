@@ -11,6 +11,7 @@ const ImageComp = ({photo}) => (
 
 const AlbumList = ({spotifyApi}) => (
     <ul>
+        {console.log(spotifyApi)}
         {spotifyApi.items ? <ImageComp photo={spotifyApi}/> : null}
     </ul>
 )

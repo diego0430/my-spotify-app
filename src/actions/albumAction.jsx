@@ -1,43 +1,43 @@
 import axios from 'axios'
 
-export const GET_POSTS_REQUEST = 'GET_POSTS_REQUEST'
-const getPostsRequest = () => {
+export const GET_ALBUMS_REQUEST = 'GET_ALBUMS_REQUEST'
+const getAlbumsRequest = () => {
     return {
-        type: GET_POSTS_REQUEST
+        type: GET_ALBUMS_REQUEST
     }
 }
 
-export const GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS'
-const getPostsSuccess = (json) => {
+export const GET_ALBUMS_SUCCESS = 'GET_ALBUMS_SUCCESS'
+const getAlbumsSuccess = (json) => {
     return {
-        type: GET_POSTS_SUCCESS,
+        type: GET_ALBUMS_SUCCESS,
         albums: json,
         receivedAt: Date.now()
     }
 }
 
-export const GET_POSTS_FAILURE = 'GET_POSTS_FAILURE'
-const getPostsFailure = (error) => {
+export const GET_ALBUMS_FAILURE = 'GET_ALBUMS_FAILURE'
+const getAlbumsFailure = (error) => {
     return {
-        type: GET_POSTS_FAILURE,
+        type: GET_ALBUMS_FAILURE,
         error
     }
 }
 
 export const getAlbums = () => {
     return (dispatch) => {
-        dispatch(getPostsRequest())
+        dispatch(getAlbumsRequest())
         return axios.get('https://api.spotify.com/v1/artists/6PAt558ZEZl0DmdXlnjMgD/albums',
             {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
-                    'Authorization': ' Bearer BQBXaCRb1NuL7LCzl3bjVNrDd3y70R8BLrQ0AN5upVwZ49wSNc0MTjyefhpuIY0DdNiotYROprtXLC_7dXw'
+                    'Authorization': ' Bearer BQCTAA0BHzaD7fxOFUkBPWFyrtMEIi1ymIW1hk1qI23AAHR_PDpFgooTusFwacCVSMlvadiGNnomZZ1uAbw'
                 }
             }).then(res =>
-            dispatch(getPostsSuccess(res.data))
+            dispatch(getAlbumsSuccess(res.data))
         ).catch(err =>
-            dispatch(getPostsFailure(err))
+            dispatch(getAlbumsFailure(err))
         )
     }
 }

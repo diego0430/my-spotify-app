@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import App from './components/App'
 import rootReducer from './reducers/rootReducer'
 import { getAlbums } from './actions/albumAction'
+import {getAlbumTracks} from "./actions/albumTracksAction";
 
 const store = createStore(
     rootReducer,
@@ -14,6 +15,7 @@ const store = createStore(
 )
 
 store.dispatch(getAlbums())
+store.dispatch(getAlbumTracks())
 
 render(
     <Provider store={store}>
