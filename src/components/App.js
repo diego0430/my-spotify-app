@@ -1,5 +1,5 @@
 import React from 'react'
-import GetPostList from '../containers/GetPostListContainer'
+import GetPostList from '../containers/GetAlbumListContainer'
 
 const App = () => (
     <div>

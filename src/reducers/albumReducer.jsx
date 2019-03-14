@@ -1,20 +1,20 @@
 import {
     GET_POSTS_REQUEST, GET_POSTS_SUCCESS, GET_POSTS_FAILURE
-} from '../actions/postAction'
+} from '../actions/albumAction'
 
 const initalState = {
     isFetching: false,
-    items: []
+    items: {}
 }
 
-const posts = (state = [initalState], action) => {
+const albums = (state = [initalState], action) => {
     switch (action.type) {
         case GET_POSTS_REQUEST:
             return [
                 ...state,
                 {
                     isFetching: true,
-                    items: []
+                    items: {}
                 }
             ]
         case GET_POSTS_SUCCESS:
@@ -22,7 +22,7 @@ const posts = (state = [initalState], action) => {
                 ...state,
                 {
                     isFetching: false,
-                    items: action.posts,
+                    items: action.albums,
                     lastUpdated: action.receivedAt
                 }
             ]
@@ -39,4 +39,4 @@ const posts = (state = [initalState], action) => {
     }
 }
 
-export default posts
+export default albums

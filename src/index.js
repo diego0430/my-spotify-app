@@ -6,14 +6,14 @@ import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import App from './components/App'
 import rootReducer from './reducers/rootReducer'
-import { getPosts } from './actions/postAction'
+import { getAlbums } from './actions/albumAction'
 
 const store = createStore(
     rootReducer,
     applyMiddleware(thunk, logger)
 )
 
-store.dispatch(getPosts())
+store.dispatch(getAlbums())
 
 render(
     <Provider store={store}>

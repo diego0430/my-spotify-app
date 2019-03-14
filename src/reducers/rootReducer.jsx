@@ -1,7 +1,10 @@
-import { combineReducers } from 'redux'
-import posts from './postReducer'
+import {combineReducers} from 'redux'
+import albums from './albumReducer'
+import albumTracks from './albumTracksReducer'
+
 const rootReducer = combineReducers({
-    posts
+    albums: albums,
+    albumTracks: albumTracks
 })
 
 export default rootReducer

@@ -11,7 +11,7 @@ export const GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS'
 const getPostsSuccess = (json) => {
     return {
         type: GET_POSTS_SUCCESS,
-        posts: json,
+        albums: json,
         receivedAt: Date.now()
     }
 }
@@ -24,21 +24,20 @@ const getPostsFailure = (error) => {
     }
 }
 
-export const getPosts = () => {
+export const getAlbums = () => {
     return (dispatch) => {
-        dispatch(getPostsRequest());
-        return axios.get('https://api.spotify.com/v1/search?q=Eric%20Clapton&type=artist',
+        dispatch(getPostsRequest())
+        return axios.get('https://api.spotify.com/v1/artists/6PAt558ZEZl0DmdXlnjMgD/albums',
             {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
-                    'Authorization': ' Bearer BQBI3dQmjVobxV5whLAsKYGBQpN8kPVMjQxdEJbu4nnNceuzsGqcKetM1CETGgf-5S3wH3IVUkiXMoc4WW0'
+                    'Authorization': ' Bearer BQBXaCRb1NuL7LCzl3bjVNrDd3y70R8BLrQ0AN5upVwZ49wSNc0MTjyefhpuIY0DdNiotYROprtXLC_7dXw'
                 }
             }).then(res =>
-                // console.log(res.data)
-                dispatch(getPostsSuccess(res.data))
-            ).catch(err =>
-                dispatch(getPostsFailure(err))
-            )
+            dispatch(getPostsSuccess(res.data))
+        ).catch(err =>
+            dispatch(getPostsFailure(err))
+        )
     }
 }
