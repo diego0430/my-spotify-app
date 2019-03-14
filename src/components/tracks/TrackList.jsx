@@ -9,9 +9,9 @@ const LabelComp = ({truck}) => (
 )
 
 const TrackList = ({spotifyTrucks}) => (
-    <ul>
+    <ol>
         {spotifyTrucks.items ? <LabelComp truck={spotifyTrucks}/> : null}
-    </ul>
+    </ol>
 )
 
 

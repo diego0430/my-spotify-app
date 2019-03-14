@@ -32,7 +32,7 @@ export const getAlbums = () => {
                 headers: {
                     'Accept': 'application/json',
                     'Content-Type': 'application/json',
-                    'Authorization': ' Bearer BQCTAA0BHzaD7fxOFUkBPWFyrtMEIi1ymIW1hk1qI23AAHR_PDpFgooTusFwacCVSMlvadiGNnomZZ1uAbw'
+                    'Authorization': ' Bearer BQDiPuHUcKZFCGSzsj49CdHk8NGSVPSs-qH-RcXD4GUA12BztimaxHNKlv4KW22zvye_TwcdCMwnrJhjG8U'
                 }
             }).then(res =>
             dispatch(getAlbumsSuccess(res.data))
